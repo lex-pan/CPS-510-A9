@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" name="CPS 510 A9" content="Site to display Oracle Info">
+<title>FastGoods</title>
+<link rel="icon" type="image/x-icon" href="title_img.webp">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='A9.css') }}">
+</head>
+
+<body>
+    <a href="{{ url_for('menu') }}">Back to Menu</a>
+    <a href="{{ url_for('queries') }}">Back to Queries</a>
+    <h1>Query Results</h1>
+    {% if results %}
+        <div id="results-container" style="display: grid; grid-template-columns: repeat({{column_names|length}}, 1fr);">
+            {% for col in column_names %}
+                <div class="grid-cell">{{ col }}</div>
+            {% endfor %}
+
+            {% for row in results %}
+                {% for col in column_names %}
+                    <div class="grid-cell">{{ row[col] }}</div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <h3>No results returned.</h3>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" name="CPS 510 A9" content="Site to display Oracle Info">
+<title>FastGoods</title>
+<link rel="icon" type="image/x-icon" href="title_img.webp">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='A9.css') }}">
+</head>
+
+<body>
+    <a href="{{ url_for('menu') }}">Back to Menu</a>
+    <form method="post" action="/query-result">
+    {% for q in available_queries %}
+        <button type="submit" name="query" value="{{ q.query }}">{{ q.description }}</button>
+    {% endfor %}
+    </form>
+</body>
+</html>

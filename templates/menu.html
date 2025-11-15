@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" name="CPS 510 A9" content="Site to display Oracle Info">
+<title>FastGoods</title>
+<link rel="icon" type="image/x-icon" href="title_img.webp">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='A9.css') }}">
+</head>
+
+<body>
+    <section id="menu">
+        <h1>FastGoods Database</h1>
+        <form class="form-buttons" method="get">
+            <input type="submit" name="action" value="Create Tables">
+            <input type="submit" name="action" value="Populate Tables">
+            <input type="submit" name="action" value="Drop Tables">
+            <input type="submit" formaction="/queries" value="Queries">
+        </form>
+    </section>
+</body>
+</html>
