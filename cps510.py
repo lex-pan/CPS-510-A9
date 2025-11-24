@@ -44,7 +44,7 @@ def queries():
         {"description": "All users.", "query": "SELECT email, customerID FROM customer;" },
         {"description": "All sellers with products that have 10+ items in stock", "query": "SELECT p.productID, p.quantity, s.name, s.email FROM product p, seller s WHERE p.quantity >= '10' AND p.sellerID = s.sellerID;"},
         {"description": "Orders made after 2025-03-01.", "query": "SELECT o.orderID, o.dateBought, o.userAttached, c.firstN FROM orderInf o, customer c WHERE o.dateBought >= '2025-03-05' AND o.userAttached = c.customerID;"},
-        {"description": "Shows all reviews with a rating higher than 3", "query": "SELECT * FROM review WHERE rating >= '3'"}
+        {"description": "Shows all reviews with a rating higher than 3", "query": "SELECT * FROM review WHERE rating >= '3';"}
     ]
 
     return render_template("queries.html", available_queries=available_queries)
