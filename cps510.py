@@ -40,7 +40,10 @@ def queries():
     available_queries = [
         {"description": "Select all employees that report to joe bill.", "query": "SELECT name FROM employee WHERE employee.manager_id = '550e8400-e29b-41d4-a716-446655440000';"},
         {"description": "Select number of company vans the company owns", "query": "SELECT COUNT(plate) FROM companyVan;"},
-        {"description": "Get the mileage of the car gabriel berkeley drove on 2020-09-22", "query": "SELECT c.plate, c.mileage FROM companyVan c, employee e, drives d WHERE e.name = 'gabriel berkley'  AND e.id = d.employee_id AND d.drive_date = '2020-09-22' AND d.plate = c.plate; " }
+        {"description": "Get the mileage of the car gabriel berkeley drove on 2020-09-22", "query": "SELECT c.plate, c.mileage FROM companyVan c, employee e, drives d WHERE e.name = 'gabriel berkley'  AND e.id = d.employee_id AND d.drive_date = '2020-09-22' AND d.plate = c.plate; " },
+        {"description": "All users.", "query": "SELECT email, customerID FROM customer;" },
+        {"description": "All sellers with products that have 10+ items in stock", "query": "SELECT p.productID, p.quantity, s.name, s.email FROM product p, seller s WHERE p.quantity >= '10' AND p.sellerID = s.sellerID;"},
+        {"description": "Orders made after 2025-03-01.", "query": "SELECT o.orderID, o.dateBought, o.userAttached, c.firstN FROM orderInf o, customer c WHERE o.dateBought >= '2025-03-05' AND o.userAttached = c.customerID;"}
     ]
 
     return render_template("queries.html", available_queries=available_queries)
