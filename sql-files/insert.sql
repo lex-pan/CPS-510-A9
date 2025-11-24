@@ -45,34 +45,40 @@ INSERT INTO warehouseSchedule VALUES ('Missisauga Warehouse Station', 3, 2, 0, '
 
 -- Customers
 INSERT INTO CUSTOMER
-VALUES ('rogan@gmail.com', 'Rogan', 'Duenas', '131 Phantom Avenue', 'thief123', '1');
+VALUES ('rogan@gmail.com', 'Rogan', 'Duenas', '131 Phantom Avenue', 'thief123', '11111111111111111111');
 INSERT INTO CUSTOMER
-VALUES ('kevin@gmail.com', 'Kevin', 'Munich', '1101 Yonge Street', 'imamunch15', '2');
+VALUES ('kevin@gmail.com', 'Kevin', 'Munich', '1101 Yonge Street', 'imamunch15', '22222222222222222222');
 INSERT INTO CUSTOMER
-VALUES ('joker@gmail.com', 'Joe', 'Kerr', '16 Shibuya Road', 't4ke0v3r', '3');
+VALUES ('joker@gmail.com', 'Joe', 'Kerr', '16 Shibuya Road', 't4ke0v3r', '33333333333333333333');
 
 -- Sellers
 INSERT INTO SELLER
-VALUES('paymepls@yahoo.ca', 'BeggingCo', '911 Jays Boulevard', 'PLEASEPLEASEPLEASE', '1');
+VALUES('paymepls@yahoo.ca', 'BeggingCo', '911 Jays Boulevard', 'PLEASEPLEASEPLEASE', '44444444444444444444');
 INSERT INTO SELLER
-VALUES('Joejoeson@hotmail.com', 'JoesAndStuff', '10 Joseph Street', 'MYNAMEISNOTJOE', '2');
+VALUES('Joejoeson@hotmail.com', 'JoesAndStuff', '10 Joseph Street', 'MYNAMEISNOTJOE', '55555555555555555555');
 INSERT INTO SELLER
-VALUES('bryce@papen.com', 'RiceBowels', '113 Brooke Road', 'IMINEVERYTHING', '3');
+VALUES('bryce@papen.com', 'RiceBowels', '113 Brooke Road', 'IMINEVERYTHING', '66666666666666666666');
 
 -- Products
 INSERT INTO PRODUCT
-VALUES('1', 'Calc', '15.99', 'Slang, short for calculator.', '50', '2', 'Joejoeson@hotmail.com');
+VALUES('77777777777777777777', 'Calc', '15.99', 'Slang, short for calculator.', '50', '55555555555555555555', 'Joejoeson@hotmail.com');
 INSERT INTO PRODUCT
-VALUES('2', 'Purse', '25.00', 'Please own one of our purses!', '5', '3', 'bryce@papen.com');
+VALUES('88888888888888888888', 'Purse', '25.00', 'Please own one of our purses!', '5', '66666666666666666666', 'bryce@papen.com');
 INSERT INTO PRODUCT
-VALUES('3', 'Cards', '8.99', 'These cards are overpriced.', '100', '1', 'paymepls@yahoo.ca');
+VALUES('99999999999999999999', 'Cards', '8.99', 'These cards are overpriced.', '100', '44444444444444444444', 'paymepls@yahoo.ca');
 
 -- Info for different orders
 INSERT INTO ORDERINF
-VALUES('1', '2', '1', '3', 'gift_card','2025-01-01');
+VALUES('1', '88888888888888888888', '1', '33333333333333333333', 'gift_card','2025-01-01');
 INSERT INTO ORDERINF
-VALUES('2', '3', '1', '1', 'debit','2025-02-08');
+VALUES('2', '99999999999999999999', '1', '11111111111111111111', 'debit','2025-02-08');
 INSERT INTO ORDERINF
-VALUES('3', '1', '1', '1', 'credit','2025-03-05');
+VALUES('3', '77777777777777777777', '1', '11111111111111111111', 'credit','2025-03-05');
 INSERT INTO ORDERINF
-VALUES('4', '2', '1', '1', 'gift_card', '2025-10-06');
+VALUES('4', '88888888888888888888', '1', '11111111111111111111', 'gift_card', '2025-10-06');
+
+-- Reviews
+INSERT INTO review VALUES (5, '77777777777777777777', 'Is overall a very sturdy calculator.', '11111111111111111111');
+INSERT INTO review VALUES (4, '99999999999999999999', 'They are cards. That is it.' , '22222222222222222222');
+INSERT INTO review VALUES (5, '88888888888888888888', 'Perfect fit and great protection for my phone!', '33333333333333333333');
+INSERT INTO review VALUES (1, '99999999999999999999', 'It was missing some cards :(', '33333333333333333333');

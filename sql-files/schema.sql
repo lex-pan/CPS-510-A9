@@ -99,6 +99,13 @@ CREATE TABLE orderInf (
 		FOREIGN KEY (payMethod) REFERENCES paymentInfo(payType)
 );
 
+CREATE TABLE review (
+    rating NUMBER(1, 0) CHECK (rating BETWEEN 1 AND 5),
+    productID CHAR(20) NOT NULL REFERENCES product(productID),
+    revContent VARCHAR2(400),
+    customerID CHAR(20) NOT NULL REFERENCES customer(customerID)
+);
+
 -- Views
 CREATE VIEW carsForRetirement AS
 SELECT * 
