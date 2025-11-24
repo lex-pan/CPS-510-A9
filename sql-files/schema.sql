@@ -54,6 +54,51 @@ CREATE TABLE warehouseSchedule (
     FOREIGN KEY (address) REFERENCES warehouse(address)
 );
 
+CREATE TABLE customer (
+	email	     VARCHAR2(100) NOT NULL UNIQUE,
+	firstN	     VARCHAR2(50) NOT NULL,
+	lastN	     VARCHAR2(50) NOT NULL,
+	homeAdd	     VARCHAR2(300) NOT NULL,
+	password     VARCHAR2(30) NOT NULL,
+	customerID   char(20) NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE seller (
+	email	     VARCHAR2(100) NOT NULL,
+	name	     VARCHAR2(50) NOT NULL,
+	address	     VARCHAR2(300) NOT NULL,
+	password     VARCHAR2(30) NOT NULL,
+	sellerID     char(20) NOT NULL,
+	PRIMARY KEY(email, sellerID)
+);
+
+CREATE TABLE product (
+	productID CHAR(20) PRIMARY KEY NOT NULL,
+	productName VARCHAR2(50) NOT NULL,
+	price NUMBER(10, 2) NOT NULL,
+	productdesc VARCHAR2(500),
+	quantity NUMBER(5) NOT NULL CHECK (quantity >= 0),
+	sellerID CHAR(20) NOT NULL,
+    sellerEmail  VARCHAR2(100) NOT NULL,
+    CONSTRAINT fk_product_seller
+        FOREIGN KEY (sellerEmail, sellerID) REFERENCES seller(email, sellerID)
+);
+
+CREATE TABLE orderInf (
+	orderID      VARCHAR2(36) PRIMARY KEY,
+	productID    CHAR(20) NOT NULL,
+	numItem	     NUMBER NOT NULL,
+	userAttached CHAR(20) NOT NULL,
+	payMethod    VARCHAR2(50) NOT NULL,
+	dateBought   DATE NOT NULL,
+	CONSTRAINT fk_order_product
+		FOREIGN KEY (productID) REFERENCES product(productID),
+	CONSTRAINT fk_order_customer
+		FOREIGN KEY (userAttached) REFERENCES customer(customerID),
+	CONSTRAINT fk_order_payment
+		FOREIGN KEY (payMethod) REFERENCES paymentInfo(payType)
+);
+
 -- Views
 CREATE VIEW carsForRetirement AS
 SELECT * 
